@@ -70,7 +70,7 @@ class Tuner
     private function fixPath($path)
     {
         if ($path[0]=='~') {
-            $path = $_SERVER['HOME'] . ltrim($path, '~');
+            $path = getenv("HOME") . ltrim($path, '~');
         }
         
         if (!file_exists($path)) {
