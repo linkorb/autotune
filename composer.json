@@ -1,0 +1,26 @@
+{
+    "name": "linkorb/autotune",
+    "description": "Tune your autoloader",
+    "homepage": "https://github.com/linkorb/autotune",
+    "keywords": ["composer", "packagist", "autoload", "autoloader", "tune"],
+    "type": "library",
+    "authors": [
+        {
+            "name": "Joost Faassen",
+            "email": "j.faassen@linkorb.com",
+            "role": "Development"
+        }
+    ],
+    "require": {
+    },
+    "require-dev": {
+       "psr/log": "^1.0"
+       "phpunit/phpunit": "~5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AutoTune\\": "src/"
+        }
+    },
+    "license": "MIT"
+}
