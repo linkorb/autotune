@@ -14,7 +14,7 @@
     "require": {
     },
     "require-dev": {
-       "psr/log": "^1.0"
+       "psr/log": "^1.0",
        "phpunit/phpunit": "~5.0"
     },
     "autoload": {
