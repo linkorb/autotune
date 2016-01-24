@@ -87,6 +87,9 @@ class Tuner
         }
         
         $config = $this->getConfig();
+        if (!$config) {
+            return;
+        }
         
         if (!$config['autoload']) {
             throw new RuntimeException("No 'autoload' rules defined in autotune.json");
