@@ -47,7 +47,7 @@ require-dev": {
 
 Then run `composer update`
 
-### 2. Add 1 line to initialize AutoTune
+### 2. Initialize AutoTune in your app
 
 Somewhere in your application, you're including `vendor/autoload.php`. Sometimes it's in `web/index.php` or `bin/console`. Find this location, and modify add these lines:
 
@@ -57,6 +57,7 @@ if (class_exists('AutoTune\Tuner')) {
     \AutoTune\Tuner::init($loader);
 }
 ```
+Wrapping the call to `init` in the `class_exists` block ensures autotune is only used if AutoTune is installed in your (development) environment (installed from the require-dev block in composer.json). In production environments it won't be called if you install your dependancies with `--no-dev`)
 
 ### 3. Add an `autotune.json` file to your project root.
 
