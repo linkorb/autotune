@@ -40,7 +40,7 @@ Making your own application ready for AutoTune takes 3 simple steps:
 ### 1. Include `linkorb/autotune` from Packagist in your composer.json file
 
 ```json
-require": {
+require-dev": {
    "linkorb/autotune": "~1.0"
 }
 ```
@@ -49,11 +49,13 @@ Then run `composer update`
 
 ### 2. Add 1 line to initialize AutoTune
 
-Somewhere in your application, you're including `vendor/autoload.php`. Sometimes it's in `web/index.php` or `bin/console`. Find this location, and modify add a single line:
+Somewhere in your application, you're including `vendor/autoload.php`. Sometimes it's in `web/index.php` or `bin/console`. Find this location, and modify add these lines:
 
 ```php
 $loader = require_once __DIR__.'/../vendor/autoload.php';
-\AutoTune\Tuner::init($loader);
+if (class_exists('AutoTune\Tuner')) {
+    \AutoTune\Tuner::init($loader);
+}
 ```
 
 ### 3. Add an `autotune.json` file to your project root.
