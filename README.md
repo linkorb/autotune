@@ -57,7 +57,7 @@ if (class_exists('AutoTune\Tuner')) {
     \AutoTune\Tuner::init($loader);
 }
 ```
-Wrapping the call to `init` in the `class_exists` block ensures autotune is only used if AutoTune is installed in your (development) environment (installed from the require-dev block in composer.json). In production environments it won't be called if you install your dependancies with `--no-dev`)
+Wrapping the call to `init` in the `class_exists` block ensures autotune is only used if AutoTune is installed in your (development) environment (installed from the require-dev block in composer.json). In production environments it won't be called if you install your dependencies with `--no-dev`)
 
 ### 3. Add an `autotune.json` file to your project root.
 
